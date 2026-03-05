@@ -1,0 +1,180 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+DGLabFramework
+</name>
+</assembly>
+<members>
+<member name="T:DGLabFramework.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:DGLabFramework.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:DGLabFramework.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:DGLabFramework.DGMessage">
+ <summary>
+ 表示郊狼的消息
+ </summary>
+</member>
+<member name="T:DGLabFramework.DGServer">
+ <summary>
+ 表示一个郊狼服务端
+ </summary>
+</member>
+<member name="P:DGLabFramework.DGServer.Port">
+ <summary>
+ 获取或设置服务端的端口号
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:DGLabFramework.DGServer.Address">
+ <summary>
+ 获取或设置服务端的地址
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:DGLabFramework.DGServer.ID">
+ <summary>
+ 获取或设置服务端的ID，格式为XXXX-XXXXXXXXX-XXXXX-XXXXX-XX
+ </summary>
+ <returns></returns>
+</member>
+<member name="F:DGLabFramework.DGServer.Devices">
+ <summary>
+ 包含当前连接的设备ID列表，每个设备ID格式为XXXX-XXXXXXXXX-XXXXX-XXXXX-XX
+ </summary>
+</member>
+<member name="F:DGLabFramework.DGServer.DeviceN">
+ <summary>
+ 预留给下一个设备的编号
+ </summary>
+</member>
+<member name="M:DGLabFramework.DGServer.#ctor">
+ <summary>
+ 创建新的郊狼服务端
+ </summary>
+</member>
+<member name="M:DGLabFramework.DGServer.Start">
+ <summary>
+ 启动服务器
+ </summary>
+</member>
+<member name="M:DGLabFramework.DGServer.SetStrength(DGLabFramework.DGServer.Channel,System.Int32,System.Int32)">
+ <summary>
+ 设置输出强度
+ </summary>
+ <param name="channel">通道</param>
+ <param name="strength">强度</param>
+</member>
+<member name="M:DGLabFramework.DGServer.AddStrength(DGLabFramework.DGServer.Channel,System.Int32,System.Int32)">
+ <summary>
+ 增加/减少输出强度   
+ </summary>
+ <param name="channel">通道</param>
+ <param name="strength">变化的强度</param>
+</member>
+<member name="M:DGLabFramework.DGServer.SendWave(DGLabFramework.DGServer.Channel,DGLabFramework.Wave,System.Int32)">
+ <summary>
+ 将波形发送到郊狼设备
+ </summary>
+ <param name="channel"></param>
+ <param name="wave"></param>
+ <param name="device"></param>
+</member>
+<member name="M:DGLabFramework.DGServer.Stop">
+ <summary>
+ 关闭服务器
+ </summary>
+</member>
+<member name="M:DGLabFramework.DGServer.GetQRCode">
+ <summary>
+ 获取郊狼服务端的二维码
+ </summary>
+ <returns></returns>
+</member>
+<member name="T:DGLabFramework.DGServer.Channel">
+ <summary>
+ 枚举通道
+ </summary>
+</member>
+<member name="M:DGLabFramework.DGServer.Send(DGLabFramework.DGMessage)">
+ <summary>
+ 将消息发送给郊狼
+ </summary>
+ <param name="data"></param>
+</member>
+<member name="T:DGLabFramework.Pulse">
+ <summary>
+ 表示一个脉冲
+ </summary>
+</member>
+<member name="P:DGLabFramework.Pulse.Frequency">
+ <summary>
+ 获取或设置脉冲频率，范围1~100
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:DGLabFramework.Pulse.Voltage">
+ <summary>
+ 获取或设置脉冲电压，范围0~100
+ </summary>
+ <returns></returns>
+</member>
+<member name="M:DGLabFramework.Pulse.#ctor(System.Byte,System.Byte)">
+ <summary>
+ 创建新的脉冲
+ </summary>
+ <param name="Frequency">频率</param>
+ <param name="Voltage">电压</param>
+</member>
+<member name="T:DGLabFramework.Wave">
+ <summary>
+ 表示一个波形
+ </summary>
+</member>
+<member name="F:DGLabFramework.Wave.Pulses">
+ <summary>
+ 包含的脉冲，长度不可超过400。
+ </summary>
+</member>
+<member name="M:DGLabFramework.Wave.#ctor">
+ <summary>
+ 创建一个新的波形
+ </summary>
+</member>
+<member name="M:DGLabFramework.Wave.ToString">
+ <summary>
+ 将波形转换为郊狼控制命令
+ </summary>
+ <returns>JSON格式序列</returns>
+</member>
+<member name="T:DGLabFramework.Waves">
+ <summary>
+ 包含一些预设的波形
+ </summary>
+</member>
+<member name="P:DGLabFramework.Waves.Breathe">
+ <summary>
+ “呼吸”
+ </summary>
+ <returns></returns>
+</member>
+<member name="P:DGLabFramework.Waves.Tide">
+ <summary>
+ “潮汐”
+ </summary>
+ <returns></returns>
+</member>
+</members>
+</doc>
